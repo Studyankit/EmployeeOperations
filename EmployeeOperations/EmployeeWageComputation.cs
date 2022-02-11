@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace EmployeeOperations
 {
-    internal class CompWageUsingClass
-    {
+    internal class EmployeWageComputation 
+        {
         //Constants
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
@@ -21,6 +21,8 @@ namespace EmployeeOperations
             int empHrs = 0;
             int totalEmpHrs = 0;
             int totalWorkingDays = 0;
+
+            //check condition constraint uisng while loop
             while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
                 totalWorkingDays++;
