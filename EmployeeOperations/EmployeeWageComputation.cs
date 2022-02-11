@@ -20,7 +20,7 @@ namespace EmployeeOperations
             int empWage = 0;
             int totalEmpWage = 0;
 
-            for (int day = 0; day < NUM_OF_WORKING_DAYS; day++)
+            while ( empHrs < 100 && DayOfWeek < NUM_OF_WORKING_DAYS)
                 {
 
                 Random random = new Random();
@@ -42,6 +42,7 @@ namespace EmployeeOperations
                 totalEmpWage += empWage;
                 Console.WriteLine("Emp Wage: " + empWage);
             }
+            Console.WriteLine("Total month wage: "+totalEmpWage);
         }
     }
 }
