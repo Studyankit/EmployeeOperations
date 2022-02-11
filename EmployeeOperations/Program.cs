@@ -9,4 +9,4 @@ using System;
 //empWageBuild.computeEmpWage();
 //Console.ReadKey();
 //EmployeeOperations.EmployeeWageComputation.CalculateWagesfor20DayinMonth();
-EmployeeOperations.EmployeWageComputation.CalEmpWage();
+EmployeeOperations.EmployeWageComputation.CompEmpWageforDiffComp("Coca cola", 40, 20, 40);
