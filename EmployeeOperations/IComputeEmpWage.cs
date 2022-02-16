@@ -13,4 +13,3 @@ namespace EmployeeWageComputation
         void GetWage();
     }
 }
-}
