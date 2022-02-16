@@ -4,23 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeOperations
+namespace EmployeeOperations.UC10
 {
-    internal class EmployeWageComputation 
-        {
-        //Constants
+    internal class compEmpWage
+    {
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
-        
-        public static int CompEmpWageforDiffComp(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+
+        internal string company;
+        internal int empRatePerHour;
+        internal int numOfWorkingDays;
+        internal int maxHoursPerMonth;
+        internal int totalEmpWage;
+
+        public compEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+        {
+            this.company = company;
+            this.empRatePerHour = empRatePerHour;
+            this.numOfWorkingDays = numOfWorkingDays;
+            this.maxHoursPerMonth = maxHoursPerMonth;
+        }
+        public void setTotalEmpWage(int totalEmpWage)
+        {
+            this.totalEmpWage = totalEmpWage;
+        }
+
+        public string toString()
+        {
+            return "Total Emp Wage for company : " + this.company + " is : " + this.totalEmpWage;
+        }
+        public int ComputeEmpWage()
         {
 
             //variables
             int empHrs = 0;
             int totalEmpHrs = 0;
             int totalWorkingDays = 0;
-
-            //check condition constraint uisng while loop
             while (totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
             {
                 totalWorkingDays++;
@@ -42,9 +61,8 @@ namespace EmployeeOperations
                 Console.WriteLine("Days#: " + totalWorkingDays + " Emp Hrs : " + empHrs);
             }
             int totalEmpWage = totalEmpHrs * empRatePerHour;
-            Console.WriteLine("Total Emp Wage for company: " + company + " is : " + totalEmpWage);
+            Console.WriteLine("Total Emp Wage for company: " + this.company + " is : " + this.totalEmpWage);
             return totalEmpWage;
         }
-
     }
 }
