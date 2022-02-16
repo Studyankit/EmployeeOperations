@@ -1,12 +1,27 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿using EmployeeWageOperations;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-//EmpWageBuilder empWageBuild = new EmpWageBuilder();
-//empWageBuild.addCompanyEmpWage("DMart", 20, 2, 10);
-//empWageBuild.addCompanyEmpWage("Reliance", 10, 4, 20);
-//empWageBuild.computeEmpWage();
-//Console.ReadKey();
-//EmployeeOperations.EmployeeWageComputation.CalculateWagesfor20DayinMonth();
-EmployeeOperations.EmployeWageComputation.CompEmpWageforDiffComp("Coca cola", 40, 20, 40);
+namespace EmployeeWageComputation
+{
+    public class Program
+    {
+        // Main Method /Entry point
+        static void Main(string[] args)
+        {
+            //printing message on console
+            Console.WriteLine("Welcome To Employee Wage Computation Program \n");
+            //Creating Object for each company and passing value to constructor.
+            CalculateEmpWage company1 = new CalculateEmpWage("Dmart", 30, 120, 25);
+            CalculateEmpWage company2 = new CalculateEmpWage("Reliance", 25, 125, 24);
+            CalculateEmpWage company3 = new CalculateEmpWage("Amazon", 40, 110, 22);
+            company1.WageCompute();
+            company2.WageCompute();
+            company3.WageCompute();
+            Console.ReadLine();
+        }
+    }
+}
